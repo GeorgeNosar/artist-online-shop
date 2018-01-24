@@ -1,0 +1,77 @@
+header {
+    min-height: 62px;
+    position: relative;
+    font-family: "Exo2Bold";
+}
+/*Верхнее меню*/
+.top_line {
+	/*background-color: black;*/
+	font-family: "Exo2Bold";
+	color: black;
+}
+.top_line h1 {
+	font-size: 25px;
+}
+.top_line h3 {
+	text-align: center;
+}
+#car-gal button {
+	margin: 30px 0px;
+}
+#car-gal img {
+	max-width: 100% !important;
+	height: auto;
+	display: block;
+}
+body {
+	font-family: "OpenSansRegular";
+}
+section {
+	font-size: 15px;
+}
+
+/*Не отображаются по умолчанию для динамической страницы*/
+.hidden {
+	display: none;
+}
+
+.not-hidden {
+	display: block;
+}
+
+
+
+/*Настройка анимации jquery magnific popup*/
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+
+  -webkit-transition: all 0.35s ease-out;
+  -moz-transition: all 0.35s ease-out;
+  transition: all 0.35s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+
+  -webkit-transition: all 0.35s ease-out;
+  -moz-transition: all 0.35s ease-out;
+  transition: all 0.35s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
