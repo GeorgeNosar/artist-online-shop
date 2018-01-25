@@ -7,7 +7,7 @@ $(".popup").magnificPopup(
 $(".carousel").owlCarousel({
 		loop:true,
 		autoplay: true,
-		autoplayTimeout: 5000,
+		autoplayTimeout: 3000,
 		autoplayHoverPause: false,
 		autoplaySpeed: 700,
 		items: 1,

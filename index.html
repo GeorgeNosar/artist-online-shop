@@ -18,12 +18,12 @@
 			<div class="container">
 				<div class="row">
 					<div id="icon" class="col-md-1 col-xs-1 col-sm-1">
-					<a href="https://vk.com/viktory_art">
+					<a target="_blank" href="https://vk.com/viktory_art">
 						<img src="img/icons/vk.png" alt="">
 					</a>
 					</div>
 					<div id="icon" class="col-md-1 col-xs-1 col-sm-1">
-					<a href="https://www.instagram.com/viktoriakoltsun/">
+					<a target="_blank" href="https://www.instagram.com/viktoriakoltsun/">
 						<img src="img/icons/ins.png" alt="">
 					</a>	
 					</div>										
@@ -36,7 +36,9 @@
 					</div>
 					<div class="col-md-4 col-xs-4 col-sm-4"></div>
 					<div id="icon" class="col-md-1 col-xs-1 col-sm-1">
-						<img src="img/icons/tote-bag.png" alt="">
+						<a href="#basket" class="popup">
+							<img src="img/icons/tote-bag-0.png" alt="">
+						</a>			
 					</div>
 				</div>
 			</div>
@@ -49,8 +51,8 @@
 			<div class="row">
 				<div class="col-md-4 col-sm-3 col-xs-3"></div>
 				<div class="col-md-4 col-sm-6 col-xs-6">
-					<a href="" class="left-button">В магазин</a>
-					<a href="" class="right-button">Задать вопрос</a>
+					<a href="shop.html" class="left-button">В магазин</a>
+					<a href="#question" class="right-button popup">Задать вопрос</a>
 				</div>
 				<div class="col-md-4 col-sm-3 col-xs-3"></div>	
 			</div>
@@ -58,7 +60,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2"></div>
-				<div style="border-radius: 20px 0 0 20px;" class="col-md-8">
+				<div class="col-md-8">
 					<div class="carousel">
 						<div class="carousel-item">
 							<div class="carousel-wrap">
@@ -123,7 +125,7 @@
 			<div id="sec-sep" class="row">
 				<div class="col-md-5"></div>
 				<div class="col-md-2">
-					<a class="galery-button" href="">Галерея работ</a>
+					<a class="galery-button" href="shop.html">Галерея работ</a>
 				</div>
 				<div class="col-md-5"></div>	
 			</div>
@@ -134,9 +136,38 @@
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4"></div>
 			</div>
-		</div>
-			
+		</div>			
 	</section>
+
+
+
+	<!-- POP UP -->
+	<section id="question-sec" class="hidden">
+		<form method="POST" action="mail.php" id="question">
+			<p>Как Вас зовут?</p>
+			<input type="text" name="name">
+			<p>Ваша почта:</p>
+			<input type="text" name="mail">
+			<p>Ваш вопрос:</p>
+			<input type="text" name="quest"><br><br>
+			<a href="#success-window" class="popup">
+				<input type="submit" name="button-send" value="Отправить">
+			</a>		
+		</form>
+		<form id="success-window">
+			<p>Ваше письмо успешно отправлено!</p>
+		</form>
+	</section>
+	<section id="basket-sec" class="hidden">
+		<form id="basket" method="POST" action="shop-submit.php">
+			<div class="basket-head">
+				<h1>Корзина</h1>
+			</div>
+			<p class="basket">Ваша корзина пуста</p>
+		</form>
+	</section>
+
+
 
 	<footer>
 		<h5>© Мастерская художника Виктории Колцун<br>
@@ -146,12 +177,12 @@
 			<div class="row">
 				<div class="col-md-5 col-sm-5 col-xs-5"></div>
 				<div class="col-md-1 col-sm-1 col-xs-1">
-					<a href="https://vk.com/viktory_art">
+					<a target="_blank" href="https://vk.com/viktory_art">
 						<img id="icon" src="img/icons/vk.png" alt="">
 					</a>
 				</div>
 				<div class="col-md-1 col-sm-1 col-xs-1">
-					<a href="https://www.instagram.com/viktoriakoltsun/">
+					<a target="_blank" href="https://www.instagram.com/viktoriakoltsun/">
 						<img id="icon" src="img/icons/ins.png" alt="">
 					</a>
 				</div>				
