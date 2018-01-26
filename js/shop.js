@@ -1,14 +1,30 @@
+/*
+/*COOKIES
+*/
 var goods = 0;
 var cartArray = [];
 var picturesArray = [];
 
+
+/*
+/* DATABASE
+*/
 picturesArray[0] = {
 	id: 1,
 	name: 'Волк',
 	cost: 1500,
 	img: 'img/galery/1/icon-1.jpg'
 }
+picturesArray[1] = {
+	id: 2,
+	name: 'Лайза',
+	cost: 2200,
+	img: 'img/galery/2/icon-1.jpg'
+}
 
+/*
+/* SHOP FUNCTIONS
+*/
 function AddToCart( id ) {
 	if(goods == 3) {
 		var error1 = document.getElementById("basket-button");
@@ -46,18 +62,29 @@ function AddToCart( id ) {
 };
 
 function WatchCart() {
+	var maxBasket = 5;
+	for(var i = 0; i < maxBasket; i++)
+	{
+		var pel = document.getElementById("basket-element-" + (i+1));
+		pel.innerHTML = "<p id='basket-element-" + (i+1) + "></p>";
+		var a = document.getElementById("be-" + (i+1));
+		a.className = 'delete-button hidden';
+	}
+
 	if(goods == 0) {
 		var empty = document.getElementById('basket-element-1');
 		empty.innerHTML = "<p class='basket-element-1'>Ваша корзина пуста</p>";
 		var result = document.getElementById('result');
 		result.innerHTML = "<p id='result'></p>";
+		var order = document.getElementById('order-button');
+		order.className = 'delete-button hidden';
 		return;
 	}
 	var basketElemetsArray = [];
+	var summ = 0;
 	for(var i = 0; i < goods; i++)
 	{
 		var el;
-		var summ = 0;
 		for(var j = 0; j < picturesArray.length; j++)
 		{
 			if(cartArray[i] == picturesArray[j].id) {
@@ -83,7 +110,10 @@ function WatchCart() {
 		deleteButton.className = 'delete-button not-hidden';
 	}
 	var result = document.getElementById('result');
-		result.innerHTML = "<p id='result'>Итого: " + summ + " руб.</p>";
+		result.innerHTML = "<p id='result'>Итого: <b>" + summ + " руб. </b></p>";
+
+	var order = document.getElementById('order-button');
+		order.className = 'delete-button not-hidden';
 
 	return;
 };
@@ -91,8 +121,6 @@ function WatchCart() {
 function DeleteFromCart( index ) {
 	cartArray.splice(index, 1);
 	goods-=1;
-	var deleteButton = document.getElementById('be-' + (index+1) );
-		deleteButton.className = 'delete-button hidden';
 
 	var basketImg = document.getElementById('basket-img');
 	switch (goods) {

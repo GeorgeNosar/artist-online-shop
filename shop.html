@@ -45,6 +45,9 @@
 			<h3>Мастерская художника</h3>
 		</div>
 	</header>
+
+
+
 	<!-- Галерея -->
 	<section id="galery" class="not-hidden">
 		<div class="container">
@@ -67,10 +70,10 @@
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4">
-					<a id="1" class="gal-el" href="">
-						<img onmouseover="this.src = 'img/galery/1/alter.jpg'" onmouseout="this.src = 'img/galery/1/main.jpg'" src="img/galery/1/main.jpg" alt=""> <br>
-						<p>Волк<br>
-						1500,00 руб</p>
+					<a id="2" class="gal-el popup" href="#pug-2">
+						<img onmouseover="this.src = 'img/galery/2/alter.jpg'" onmouseout="this.src = 'img/galery/2/main.jpg'" src="img/galery/2/main.jpg" alt=""> <br>
+						<p>Лайза<br>
+						2200,00 руб</p>
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4">
@@ -188,7 +191,7 @@
 			<p id="basket-element-1"></p>
 			<a href="#" id="be-1" class="delete-button hidden" onclick="DeleteFromCart(0)">Удалить</a>
 			<p id="basket-element-2"></p>
-			<a href="#" id="be-2" class="delete-button hidden">Удалить</a>
+			<a href="#" id="be-2" class="delete-button hidden" onclick="DeleteFromCart(1)">Удалить</a>
 			<p id="basket-element-3"></p>
 			<a href="#" id="be-3" class="delete-button hidden">Удалить</a>
 			<p id="basket-element-4"></p>
@@ -196,6 +199,7 @@
 			<p id="basket-element-5"></p>
 			<a href="#" id="be-5" class="delete-button hidden">Удалить</a>
 			<p id="result"></p>
+			<a href="order-page.html" id="order-button" class="delete-button hidden">Перейти к оформлению заказа</a>
 		</form>
 	</section>
 
@@ -207,23 +211,23 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-6 col-xs-6">
-						<img id="main-image" src="img/galery/1/main.jpg" alt="">
+						<img id="main-image-1" src="img/galery/1/main.jpg" alt="">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-1 col-sm-1 col-xs-1">
-									<img onclick="var img = document.getElementById('main-image');
+									<img onclick="var img = document.getElementById('main-image-1');
 									img.src = 'img/galery/1/main.jpg';" class="pu-icon" src="img/galery/1/icon-1.jpg" alt="">
 								</div>
 								<div class="col-md-1 col-sm-1 col-xs-1">
-									<img onclick="var img = document.getElementById('main-image');
+									<img onclick="var img = document.getElementById('main-image-1');
 									img.src = 'img/galery/1/alter.jpg';" class="pu-icon" src="img/galery/1/icon-2.jpg" alt="">
 								</div>
 								<div class="col-md-1 col-sm-1 col-xs-1">
-									<img onclick="var img = document.getElementById('main-image');
+									<img onclick="var img = document.getElementById('main-image-1');
 									img.src = 'img/galery/1/pu-1.jpg';" class="pu-icon" src="img/galery/1/icon-3.jpg" alt="">
 								</div>
 								<div class="col-md-1 col-sm-1 col-xs-1">
-									<img onclick="var img = document.getElementById('main-image');
+									<img onclick="var img = document.getElementById('main-image-1');
 									img.src = 'img/galery/1/pu-2.jpg';" class="pu-icon" src="img/galery/1/icon-4.jpg" alt="">
 								</div>
 								<div class="col-md-8 col-sm-8 col-xs-8"></div>
@@ -235,7 +239,41 @@
 						1500,00 руб</h3>
 						<p>Описание картины. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ratione deserunt repellendus dolores, expedita, corrupti ab, dicta magni nesciunt aut nam velit, enim? Voluptatem nam molestiae dicta magni saepe blanditiis.</p> <br>
 						<a onclick="AddToCart(1);" href="" id="basket-button" class="popup">Добавить в корзину</a> 
-						<!--<input type="button" id="basket-button" onclick="AddToCart(1)"> -->
+					</div>
+					<div class="col-md-3"></div>	
+				</div>
+			</div>		
+		</form>
+
+
+		<form id="pug-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<img id="main-image-2" src="img/galery/2/main.jpg" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-1 col-sm-1 col-xs-1">
+									<img onclick="var img = document.getElementById('main-image-2');
+									img.src = 'img/galery/2/main.jpg';" class="pu-icon" src="img/galery/2/icon-1.jpg" alt="">
+								</div>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+									<img onclick="var img = document.getElementById('main-image-2');
+									img.src = 'img/galery/2/alter.jpg';" class="pu-icon" src="img/galery/2/icon-2.jpg" alt="">
+								</div>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+									<img onclick="var img = document.getElementById('main-image-2');
+									img.src = 'img/galery/2/pu-1.jpg';" class="pu-icon" src="img/galery/2/icon-3.jpg" alt="">
+								</div>
+								<div class="col-md-9 col-sm-9 col-xs-9"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<h3>Лайза<br>
+						2200,00 руб</h3>
+						<p>Описание картины. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ratione deserunt repellendus dolores, expedita, corrupti ab, dicta magni nesciunt aut nam velit, enim? Voluptatem nam molestiae dicta magni saepe blanditiis.</p> <br>
+						<a onclick="AddToCart(2);" href="" id="basket-button" class="popup">Добавить в корзину</a> 
 					</div>
 					<div class="col-md-3"></div>	
 				</div>

@@ -149,7 +149,7 @@ footer h5 {
 	margin: auto;
 	position: relative;
 }
-#pug-1 {
+#pug-1, #pug-2 {
 	padding: 20px;
 	background-color: #fff;
 	max-width: 1000px;
@@ -185,7 +185,7 @@ footer h5 {
 .basket-icon {
 	margin-top: 15px;
 }
-#basket p {
+#basket p, #basket a {
 	text-align: center;
 }
 .result {
