@@ -18,6 +18,7 @@ header {
 	font-family: "OpenSansRegular";
 	font-weight: normal;
 }
+
 img {
 	max-width: 100% !important;
 	height: auto;
@@ -58,6 +59,8 @@ section {
 	margin-bottom: 60px;
 	margin-left: 45px;
 	margin-right: 0px; 
+	font-family: "OpenSansRegular";
+	font-weight: normal;
 
 }
 .right-button {
@@ -73,6 +76,8 @@ section {
 	margin-bottom: 60px;
 	margin-left: 0px;
 	margin-right: 10px; 
+	font-family: "OpenSansRegular";
+	font-weight: normal;
 }
 .left-button:hover, .right-button:hover,
  .galery-button:hover, .get-up-button:hover,

@@ -1,10 +1,50 @@
 /*
 /*COOKIES
 */
+
 var goods = 0;
 var cartArray = [];
 var picturesArray = [];
+var maxBasket = 5;
 
+function loadCookies() {
+
+	/*deleteCookie('vagoods');
+	deleteCookie('cart-element-NaN');
+	for(var i = 0; i < 30; i++) {
+		deleteCookie('cart-element-'+i );
+	}*/
+	
+	var cookie = getCookie('vagoods');
+	goods = parseInt(cookie);
+	if(goods == undefined || isNaN(goods)) {
+		goods = 0;
+		cartArray = [];
+		return;
+	}
+	alert(goods);
+	for(var i = 0; i < maxBasket; i++) {
+		var buff = getCookie('cart-element-'+i);
+		cartArray[i] = parseInt(buff);
+	}
+
+	var basketImg = document.getElementById('basket-img');
+	switch (goods) {
+		case 1:
+		basketImg.src = 'img/icons/tote-bag-1.png';
+		break;
+		case 2:
+		basketImg.src = 'img/icons/tote-bag-2.png';
+		break;
+		case 3:
+		basketImg.src = 'img/icons/tote-bag-3.png';
+		break;
+		default:
+		basketImg.src = 'img/icons/tote-bag-0.png';
+		break;
+	}
+
+};
 
 /*
 /* DATABASE
@@ -26,6 +66,7 @@ picturesArray[1] = {
 /* SHOP FUNCTIONS
 */
 function AddToCart( id ) {
+
 	if(goods == 3) {
 		var error1 = document.getElementById("basket-button");
 		error1.href = '#error1';
@@ -41,6 +82,10 @@ function AddToCart( id ) {
 	}
 	cartArray[goods] = id;
 	goods+=1;
+
+	setCookie('vagoods', goods, 7);
+	setCookie('cart-element-'+(goods-1), cartArray[goods-1], 7);
+
 	var basketImg = document.getElementById('basket-img');
 	switch (goods) {
 		case 1:
@@ -62,7 +107,6 @@ function AddToCart( id ) {
 };
 
 function WatchCart() {
-	var maxBasket = 5;
 	for(var i = 0; i < maxBasket; i++)
 	{
 		var pel = document.getElementById("basket-element-" + (i+1));

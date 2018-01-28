@@ -11,9 +11,9 @@
 	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 	<script type="text/javascript" src="libs/libs.js"></script>
 </head>
-<body>
+<body onload="loadCookies()">
 	<header>
-		<!-- Верхнее меню -->
+		<!-- Верх -->
 		<div class="top_line">
 			<div class="container">
 				<div class="row">
@@ -37,17 +37,14 @@
 					<div class="col-md-4 col-xs-4 col-sm-4"></div>
 					<div id="icon" class="col-md-1 col-xs-1 col-sm-1">
 						<a href="#basket" class="popup" onclick="WatchCart()">
-							<img src="img/icons/tote-bag-0.png" alt="">
-						</a>			
+							<img id="basket-img" src="img/icons/tote-bag-0.png" alt="">
+						</a>
 					</div>
 				</div>
 			</div>
 			<h3>Мастерская художника</h3>
-		</div>
-	</header>
-	<!-- Карусель лучших работ, кнопка перехода к магазину -->
-	<section id="car-gal" class="not-hidden">
-		<div class="container">
+
+			<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-3 col-xs-3"></div>
 				<div class="col-md-4 col-sm-6 col-xs-6">
@@ -57,6 +54,13 @@
 				<div class="col-md-4 col-sm-3 col-xs-3"></div>	
 			</div>
 		</div>
+		</div>
+	</header>
+	<!-- Карусель лучших работ, кнопка перехода к магазину -->
+	<section id="car-gal" class="not-hidden">
+		
+
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2"></div>
@@ -181,7 +185,7 @@
 			<p id="basket-element-1"></p>
 			<a href="#" id="be-1" class="delete-button hidden" onclick="DeleteFromCart(0)">Удалить</a>
 			<p id="basket-element-2"></p>
-			<a href="#" id="be-2" class="delete-button hidden">Удалить</a>
+			<a href="#" id="be-2" class="delete-button hidden" onclick="DeleteFromCart(1)">Удалить</a>
 			<p id="basket-element-3"></p>
 			<a href="#" id="be-3" class="delete-button hidden">Удалить</a>
 			<p id="basket-element-4"></p>
@@ -189,6 +193,7 @@
 			<p id="basket-element-5"></p>
 			<a href="#" id="be-5" class="delete-button hidden">Удалить</a>
 			<p id="result"></p>
+			<a href="order-page.html" id="order-button" class="delete-button hidden">Перейти к оформлению заказа</a>
 		</form>
 	</section>
 
@@ -221,6 +226,7 @@
 		</div> -->
 		<script src="js/common.js"></script>
 		<script src="js/shop.js"></script>
+		<script type="text/javascript" src="js/cookies.js"></script>
 		<script type="text/javascript" src="libs/owl-carousel/owl.carousel.js"></script>
 	</footer>
 </body>

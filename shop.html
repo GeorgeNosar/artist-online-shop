@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 	<script type="text/javascript" src="libs/libs.js"></script>
 </head>
-<body>
+<body onload="loadCookies();">
 	<header>
 		<!-- Верхнее меню -->
 		<div class="top_line" id="top">
@@ -43,14 +43,7 @@
 				</div>
 			</div>
 			<h3>Мастерская художника</h3>
-		</div>
-	</header>
-
-
-
-	<!-- Галерея -->
-	<section id="galery" class="not-hidden">
-		<div class="container">
+			<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-3 col-xs-3"></div>
 				<div class="col-md-4 col-sm-6 col-xs-6">
@@ -60,6 +53,14 @@
 				<div class="col-md-4 col-sm-3 col-xs-3"></div>	
 			</div>
 		</div>
+		</div>
+	</header>
+
+
+
+	<!-- Галерея -->
+	<section id="galery" class="not-hidden">
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-4 col-xs-4">
@@ -305,6 +306,7 @@
 		</div>
 		<script type="text/javascript" src="js/common.js"></script>
 		<script type="text/javascript" src="js/shop.js"></script>
+		<script type="text/javascript" src="js/cookies.js"></script>
 		<script type="text/javascript" src="libs/owl-carousel/owl.carousel.js"></script>
 	</footer>
 </body>
