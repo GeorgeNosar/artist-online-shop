@@ -28,21 +28,26 @@ function loadCookies() {
 		cartArray[i] = parseInt(buff);
 	}
 
+	alert(document.cookie);
+
 	var basketImg = document.getElementById('basket-img');
-	switch (goods) {
-		case 1:
-		basketImg.src = 'img/icons/tote-bag-1.png';
-		break;
-		case 2:
-		basketImg.src = 'img/icons/tote-bag-2.png';
-		break;
-		case 3:
-		basketImg.src = 'img/icons/tote-bag-3.png';
-		break;
-		default:
-		basketImg.src = 'img/icons/tote-bag-0.png';
-		break;
-	}
+
+		switch (goods) {
+			case 1:
+			basketImg.src = 'img/icons/tote-bag-1.png';
+			break;
+			case 2:
+			basketImg.src = 'img/icons/tote-bag-2.png';
+			break;
+			case 3:
+			basketImg.src = 'img/icons/tote-bag-3.png';
+			break;
+			default:
+			basketImg.src = 'img/icons/tote-bag-0.png';
+			break;
+		}
+
+	
 
 };
 
@@ -87,20 +92,20 @@ function AddToCart( id ) {
 	setCookie('cart-element-'+(goods-1), cartArray[goods-1], 7);
 
 	var basketImg = document.getElementById('basket-img');
-	switch (goods) {
-		case 1:
-		basketImg.src = 'img/icons/tote-bag-1.png';
-		break;
-		case 2:
-		basketImg.src = 'img/icons/tote-bag-2.png';
-		break;
-		case 3:
-		basketImg.src = 'img/icons/tote-bag-3.png';
-		break;
-		default:
-		basketImg.src = 'img/icons/tote-bag-0.png';
-		break;
-	}	
+		switch (goods) {
+			case 1:
+			basketImg.src = 'img/icons/tote-bag-1.png';
+			break;
+			case 2:
+			basketImg.src = 'img/icons/tote-bag-2.png';
+			break;
+			case 3:
+			basketImg.src = 'img/icons/tote-bag-3.png';
+			break;
+			default:
+			basketImg.src = 'img/icons/tote-bag-0.png';
+			break;
+		}
 	var button = document.getElementById("basket-button");
 	button.href = '#success-cart';
 	return;
@@ -167,20 +172,22 @@ function DeleteFromCart( index ) {
 	goods-=1;
 
 	var basketImg = document.getElementById('basket-img');
-	switch (goods) {
-		case 1:
-		basketImg.src = 'img/icons/tote-bag-1.png';
-		break;
-		case 2:
-		basketImg.src = 'img/icons/tote-bag-2.png';
-		break;
-		case 3:
-		basketImg.src = 'img/icons/tote-bag-3.png';
-		break;
-		default:
-		basketImg.src = 'img/icons/tote-bag-0.png';
-		break;
-	}	
+
+		switch (goods) {
+			case 1:
+			basketImg.src = 'img/icons/tote-bag-1.png';
+			break;
+			case 2:
+			basketImg.src = 'img/icons/tote-bag-2.png';
+			break;
+			case 3:
+			basketImg.src = 'img/icons/tote-bag-3.png';
+			break;
+			default:
+			basketImg.src = 'img/icons/tote-bag-0.png';
+			break;
+		}
+	
 
 	deleteCookie('cart-element-NaN');
 	for(var i = 0; i < 30; i++) {

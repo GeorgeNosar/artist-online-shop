@@ -37,6 +37,69 @@
 		</div>
 	</header>
 
+	<section id="order-data">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1 col-sm-1 col-xs-1"></div>
+			<div class="col-md-5 col-sm-5 col-xs-5">
+				<form method="POST" action="shop-submit.php">
+					<p>*Эл. почта для подтверждения заказа</p>
+					<input id="t-box" type="text" name="customer-mail-adr">
+					<p>*Имя</p>
+					<input id="t-box" type="text" name="customer-name">
+					<p>*Фамилия</p>
+					<input id="t-box" type="text" name="customer-surname">
+					<p>*Адрес</p>
+					<input id="t-box" type="text" name="customer-adr">
+					<p>*Город</p>
+					<input id="t-box" type="text" name="customer-city">
+					<p>*Страна</p>
+					<input id="t-box" type="text" name="customer-country">
+					<p>*Почтовый индекс</p>
+					<input id="t-box" type="text" name="post-index">
+					<p>*Телефон</p>
+					<input id="t-box" type="text" name="telephone-number"><br>
+					<p>*Способ доставки</p>
+
+					
+					<input type="radio" id="dm-1"
+     				name="delivery-method" value="0">
+     				<label for="dm-1">Самовывоз в городе Санкт-Петербург (бесплатно)</label><br>
+    				
+					
+    				<input type="radio" id="dm-2"
+    				 name="delivery-method" value="400">
+    				 <label for="dm-2">Почта России (400 рублей)</label>
+    				
+
+					<a href="#success-window" class="popup">
+						<input type="submit" id="submit-button" value="Оформить заказ">
+					</a>
+					
+				</form>
+			</div>
+			<div onload="WatchCart()" class="col-md-6 col-sm-6 col-xs-6">
+				<form id="basket">
+					<div class="basket-head">
+						<h1>Ваш заказ</h1>
+					</div>
+					<p id="basket-element-1"></p>
+					<a href="#" id="be-1" class="delete-button hidden" onclick="DeleteFromCart(0)">Удалить</a>
+					<p id="basket-element-2"></p>
+					<a href="#" id="be-2" class="delete-button hidden" onclick="DeleteFromCart(1)">Удалить</a>
+					<p id="basket-element-3"></p>
+					<a href="#" id="be-3" class="delete-button hidden">Удалить</a>
+					<p id="basket-element-4"></p>
+					<a href="#" id="be-4" class="delete-button hidden">Удалить</a>
+					<p id="basket-element-5"></p>
+					<a href="#" id="be-5" class="delete-button hidden">Удалить</a>
+					<p id="result"></p>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+	</section>
 
 
 
@@ -48,7 +111,7 @@
 	<section class="hidden">
 		<!-- СООБЩЕНИЯ -->
 		<form id="success-window">
-			<p>Ваше письмо отправлено.</p>
+			<p>Ваш заказ успешно оформлен. Мы свяжемся с вами в ближайшее время.</p>
 		</form>
 		<form id="success-cart">
 			<p>Товар добавлен в корзину.</p>
@@ -64,7 +127,7 @@
 
 	<!-- BUSKET -->
 	<section id="basket-sec" class="hidden">
-		<form id="basket" method="POST" action="shop-submit.php">
+		<form id="basket">
 			<div class="basket-head">
 				<h1>Корзина</h1>
 			</div>
