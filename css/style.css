@@ -247,6 +247,15 @@ hr {
 #order-data label {
 	font-size: 14px;
 }
+#end-sum {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+
+
+
 
 
 /*Не отображаются по умолчанию для динамической страницы*/

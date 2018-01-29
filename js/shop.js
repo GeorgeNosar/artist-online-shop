@@ -8,12 +8,6 @@ var picturesArray = [];
 var maxBasket = 5;
 
 function loadCookies() {
-
-	/*deleteCookie('vagoods');
-	deleteCookie('cart-element-NaN');
-	for(var i = 0; i < 30; i++) {
-		deleteCookie('cart-element-'+i );
-	}*/
 	
 	var cookie = getCookie('vagoods');
 	goods = parseInt(cookie);
@@ -28,10 +22,10 @@ function loadCookies() {
 		cartArray[i] = parseInt(buff);
 	}
 
-	alert(document.cookie);
+	WatchCart();
 
 	var basketImg = document.getElementById('basket-img');
-
+	if(!(basketImg === null)) {
 		switch (goods) {
 			case 1:
 			basketImg.src = 'img/icons/tote-bag-1.png';
@@ -46,9 +40,7 @@ function loadCookies() {
 			basketImg.src = 'img/icons/tote-bag-0.png';
 			break;
 		}
-
-	
-
+	}
 };
 
 /*
@@ -92,6 +84,7 @@ function AddToCart( id ) {
 	setCookie('cart-element-'+(goods-1), cartArray[goods-1], 7);
 
 	var basketImg = document.getElementById('basket-img');
+	if(!(basketImg === null)) {
 		switch (goods) {
 			case 1:
 			basketImg.src = 'img/icons/tote-bag-1.png';
@@ -106,6 +99,7 @@ function AddToCart( id ) {
 			basketImg.src = 'img/icons/tote-bag-0.png';
 			break;
 		}
+	}
 	var button = document.getElementById("basket-button");
 	button.href = '#success-cart';
 	return;
@@ -159,10 +153,33 @@ function WatchCart() {
 		deleteButton.className = 'delete-button not-hidden';
 	}
 	var result = document.getElementById('result');
-		result.innerHTML = "<p id='result'>Итого: <b>" + summ + " руб. </b></p>";
+		result.innerHTML = "<p id='result'>Промежуточный итог: <b>" + summ + " руб. </b></p>";
 
 	var order = document.getElementById('order-button');
 		order.className = 'delete-button not-hidden';
+
+
+	var delivery1 = document.getElementById('dm-1');
+	var delivery2 = document.getElementById('dm-2');
+	var endsum;
+
+	if( !(delivery2 === null) ) {
+		var deliverysum = delivery2.value;
+	}
+	else {
+		return;
+	}
+	
+	if(delivery2.checked) {
+		endsum = parseInt(summ) + parseInt(delivery2.value);
+		document.getElementById('delivery-sum').innerHTML = "<p id='delivery-sum'>Доставка: 400 руб.</p>";
+		document.getElementById('end-sum').innerHTML = "<p id='end-sum'>Итого: " + endsum + " руб.</p>";
+	}
+	else if(delivery1.checked) {
+		endsum = summ;
+		document.getElementById('delivery-sum').innerHTML = "<p id='delivery-sum'>Доставка: 0 руб.</p>";
+		document.getElementById('end-sum').innerHTML = "<p id='end-sum'>Итого: " + endsum + " руб.</p>";
+	}
 
 	return;
 };
@@ -172,7 +189,7 @@ function DeleteFromCart( index ) {
 	goods-=1;
 
 	var basketImg = document.getElementById('basket-img');
-
+	if(!(basketImg === null)) {
 		switch (goods) {
 			case 1:
 			basketImg.src = 'img/icons/tote-bag-1.png';
@@ -187,6 +204,7 @@ function DeleteFromCart( index ) {
 			basketImg.src = 'img/icons/tote-bag-0.png';
 			break;
 		}
+	}
 	
 
 	deleteCookie('cart-element-NaN');
@@ -202,6 +220,17 @@ function DeleteFromCart( index ) {
 			setCookie('cart-element-'+i, cartArray[i], 7);
 		}
 	}
+
+	var endsum = document.getElementById('end-sum');
+	if( !(endsum === null) ) {
+		endsum.innerHTML = "<p id='end-sum'></p>";
+	}
+	else {
+		WatchCart();
+		return;
+	}
+	var deliverysum = document.getElementById('delivery-sum');
+	deliverysum.innerHTML = "<p id='delivery-sum'></p>"
 	
 	WatchCart();
 };

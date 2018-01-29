@@ -62,12 +62,12 @@
 					<p>*Способ доставки</p>
 
 					
-					<input type="radio" id="dm-1"
+					<input onchange="WatchCart()" type="radio" id="dm-1"
      				name="delivery-method" value="0">
      				<label for="dm-1">Самовывоз в городе Санкт-Петербург (бесплатно)</label><br>
     				
 					
-    				<input type="radio" id="dm-2"
+    				<input onchange="WatchCart()" type="radio" id="dm-2"
     				 name="delivery-method" value="400">
     				 <label for="dm-2">Почта России (400 рублей)</label>
     				
@@ -78,7 +78,7 @@
 					
 				</form>
 			</div>
-			<div onload="WatchCart()" class="col-md-6 col-sm-6 col-xs-6">
+			<div class="col-md-6 col-sm-6 col-xs-6">
 				<form id="basket">
 					<div class="basket-head">
 						<h1>Ваш заказ</h1>
@@ -94,6 +94,8 @@
 					<p id="basket-element-5"></p>
 					<a href="#" id="be-5" class="delete-button hidden">Удалить</a>
 					<p id="result"></p>
+					<p id="delivery-sum"></p>
+					<p id="end-sum"></p>
 				</form>
 			</div>
 		</div>
