@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>VIKTORY ART Мастерская художника</title>
+	<link rel="stylesheet" href="css/bootstrap-grid-3.3.1.min.css" /> 
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="libs/owl-carousel/assets/owl.carousel.css">
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="libs/libs.js"></script>
+</head>
+<body onload="loadCookies();">
+	<header>
+		<!-- Верхнее меню -->
+		<div class="top_line" id="top">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-2 col-xs-2 col-sm-2">
+					<a href="index.html">
+						<img src="img/va-logo.png" alt="">
+					</a>					
+					</div>
+
+					<div class="col-md-4 col-xs-4 col-sm-4">
+						<h1>Оформление заказа</h1>
+					</div>
+					<div class="col-md-3 col-xs-3 col-sm-3"></div>
+					<div class="col-md-3 col-xs-3 col-sm-3">
+						<a id="back-button" href="shop.html">Вернуться в магазин</a>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+	</header>
+
+
+
+
+
+
+
+
+
+	<section class="hidden">
+		<!-- СООБЩЕНИЯ -->
+		<form id="success-window">
+			<p>Ваше письмо отправлено.</p>
+		</form>
+		<form id="success-cart">
+			<p>Товар добавлен в корзину.</p>
+		</form>
+		<form id="error1">
+			<p>Вы не можете сделать заказ на более, чем 3 картины.</p>
+		</form>
+		<form id="error2">
+			<p>Данный товар уже находится в Вашей корзине.</p>
+		</form>
+	</section>
+
+
+	<!-- BUSKET -->
+	<section id="basket-sec" class="hidden">
+		<form id="basket" method="POST" action="shop-submit.php">
+			<div class="basket-head">
+				<h1>Корзина</h1>
+			</div>
+			<p id="basket-element-1"></p>
+			<a href="#" id="be-1" class="delete-button hidden" onclick="DeleteFromCart(0)">Удалить</a>
+			<p id="basket-element-2"></p>
+			<a href="#" id="be-2" class="delete-button hidden" onclick="DeleteFromCart(1)">Удалить</a>
+			<p id="basket-element-3"></p>
+			<a href="#" id="be-3" class="delete-button hidden">Удалить</a>
+			<p id="basket-element-4"></p>
+			<a href="#" id="be-4" class="delete-button hidden">Удалить</a>
+			<p id="basket-element-5"></p>
+			<a href="#" id="be-5" class="delete-button hidden">Удалить</a>
+			<p id="result"></p>
+			<a href="order-page.html" id="order-button" class="delete-button hidden">Перейти к оформлению заказа</a>
+		</form>
+	</section>
+
+
+	<footer>
+		
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/shop.js"></script>
+		<script type="text/javascript" src="js/cookies.js"></script>
+		<script type="text/javascript" src="libs/owl-carousel/owl.carousel.js"></script>
+	</footer>
+</body>
+</html>

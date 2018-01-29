@@ -22,7 +22,7 @@ function loadCookies() {
 		cartArray = [];
 		return;
 	}
-	alert(goods);
+
 	for(var i = 0; i < maxBasket; i++) {
 		var buff = getCookie('cart-element-'+i);
 		cartArray[i] = parseInt(buff);
@@ -182,5 +182,19 @@ function DeleteFromCart( index ) {
 		break;
 	}	
 
+	deleteCookie('cart-element-NaN');
+	for(var i = 0; i < 30; i++) {
+		deleteCookie('cart-element-'+i );
+	}
+	if(goods == 0) {
+		deleteCookie('vagoods');
+	}
+	else {
+		setCookie('vagoods', goods, 7);
+		for(var i = 0; i < cartArray.length; i++) {
+			setCookie('cart-element-'+i, cartArray[i], 7);
+		}
+	}
+	
 	WatchCart();
 };

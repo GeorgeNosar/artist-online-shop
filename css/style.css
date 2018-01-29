@@ -81,7 +81,8 @@ section {
 }
 .left-button:hover, .right-button:hover,
  .galery-button:hover, .get-up-button:hover,
- #basket-button:hover, .delete-button:hover {
+ #basket-button:hover, .delete-button:hover,
+ #back-button:hover {
 	background-color: #969494;
 	color: #fff;
 }
@@ -139,9 +140,32 @@ footer h5 {
 	margin-left: 40px;
 	margin-right: 10px; 
 }
-
-
-
+#back-button {
+	display: inline-block;
+	border: none;
+	background-color: #d8d6d6;
+	color: black;
+	font-size: 14px;
+	padding: 10px 20px;
+	border-radius: 10px 10px 10px 10px;
+	transition: all .25s ease;
+	margin-top: 70px;
+	margin-bottom: 0px;
+	margin-left: 40px;
+	margin-right: 10px; 
+	font-family: OpenSansRegular;
+	font-weight: normal;
+}
+.top_line h1 {
+	font-family: OpenSansRegular;
+	font-weight: normal;
+	margin-top: 70px;
+	text-transform: uppercase;
+}
+hr {
+	width: 100%;
+	color: #2d2d2d;
+}
 
 
 
