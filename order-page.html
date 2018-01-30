@@ -44,35 +44,35 @@
 			<div class="col-md-5 col-sm-5 col-xs-5">
 				<form method="POST" action="shop-submit.php">
 					<p>*Эл. почта для подтверждения заказа</p>
-					<input id="t-box" type="text" name="customer-mail-adr">
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="customer-mail-adr">
 					<p>*Имя</p>
-					<input id="t-box" type="text" name="customer-name">
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="customer-name">
 					<p>*Фамилия</p>
-					<input id="t-box" type="text" name="customer-surname">
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="customer-surname">
 					<p>*Адрес</p>
-					<input id="t-box" type="text" name="customer-adr">
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="customer-adr">
 					<p>*Город</p>
-					<input id="t-box" type="text" name="customer-city">
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="customer-city">
 					<p>*Страна</p>
-					<input id="t-box" type="text" name="customer-country">
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="customer-country">
 					<p>*Почтовый индекс</p>
-					<input id="t-box" type="text" name="post-index">
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="post-index">
 					<p>*Телефон</p>
-					<input id="t-box" type="text" name="telephone-number"><br>
+					<input onchange="checkButtonCondition()" class="t-box" type="text" name="telephone-number"><br>
 					<p>*Способ доставки</p>
 
 					
-					<input onchange="WatchCart()" type="radio" id="dm-1"
+					<input onchange="functionsSpan()" type="radio" id="dm-1"
      				name="delivery-method" value="0">
      				<label for="dm-1">Самовывоз в городе Санкт-Петербург (бесплатно)</label><br>
     				
 					
-    				<input onchange="WatchCart()" type="radio" id="dm-2"
+    				<input onchange="functionsSpan()" type="radio" id="dm-2"
     				 name="delivery-method" value="400">
     				 <label for="dm-2">Почта России (400 рублей)</label>
     				
 
-					<a href="#success-window" class="popup">
+					<a href="#fields-error" id="button-condition" class="popup">
 						<input type="submit" id="submit-button" value="Оформить заказ">
 					</a>
 					
@@ -115,36 +115,11 @@
 		<form id="success-window">
 			<p>Ваш заказ успешно оформлен. Мы свяжемся с вами в ближайшее время.</p>
 		</form>
-		<form id="success-cart">
-			<p>Товар добавлен в корзину.</p>
+		<form id="zero-error">
+			<p>Вы не можете оформить заказ, если ваша корзина пуста.</p>
 		</form>
-		<form id="error1">
-			<p>Вы не можете сделать заказ на более, чем 3 картины.</p>
-		</form>
-		<form id="error2">
-			<p>Данный товар уже находится в Вашей корзине.</p>
-		</form>
-	</section>
-
-
-	<!-- BUSKET -->
-	<section id="basket-sec" class="hidden">
-		<form id="basket">
-			<div class="basket-head">
-				<h1>Корзина</h1>
-			</div>
-			<p id="basket-element-1"></p>
-			<a href="#" id="be-1" class="delete-button hidden" onclick="DeleteFromCart(0)">Удалить</a>
-			<p id="basket-element-2"></p>
-			<a href="#" id="be-2" class="delete-button hidden" onclick="DeleteFromCart(1)">Удалить</a>
-			<p id="basket-element-3"></p>
-			<a href="#" id="be-3" class="delete-button hidden">Удалить</a>
-			<p id="basket-element-4"></p>
-			<a href="#" id="be-4" class="delete-button hidden">Удалить</a>
-			<p id="basket-element-5"></p>
-			<a href="#" id="be-5" class="delete-button hidden">Удалить</a>
-			<p id="result"></p>
-			<a href="order-page.html" id="order-button" class="delete-button hidden">Перейти к оформлению заказа</a>
+		<form id="fields-error">
+			<p>Пожалуйста, заполните все поля.</p>
 		</form>
 	</section>
 

@@ -120,7 +120,10 @@ function WatchCart() {
 		var result = document.getElementById('result');
 		result.innerHTML = "<p id='result'></p>";
 		var order = document.getElementById('order-button');
-		order.className = 'delete-button hidden';
+		if( !(order === null) ) {
+			order.className = 'delete-button hidden';
+		}
+		
 		return;
 	}
 	var basketElemetsArray = [];
@@ -233,4 +236,31 @@ function DeleteFromCart( index ) {
 	deliverysum.innerHTML = "<p id='delivery-sum'></p>"
 	
 	WatchCart();
+};
+
+function checkButtonCondition() {
+	var tbox = document.getElementsByClassName('t-box');
+	for(var i = 0; i < tbox.length; i++) {
+		tbox[i].style.backgroundColor = '';
+		if( tbox[i].value === "" ) {
+			document.getElementById("button-condition").href = '#fields-error';
+			tbox[i].style.backgroundColor = '#f2bcbc';
+			return;
+		}
+	}
+
+	var rb1 = document.getElementById('dm-1');
+	var rb2 = document.getElementById('dm-2');
+	if( !(rb1.checked) && !(rb2.checked) ) {
+		document.getElementById("button-condition").href = '#fields-error';
+		return;
+	}
+	
+	document.getElementById("button-condition").href = '#success-window';
+
+};
+
+function functionsSpan() {
+	WatchCart();
+	checkButtonCondition();
 };
