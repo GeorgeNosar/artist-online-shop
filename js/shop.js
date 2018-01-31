@@ -159,7 +159,9 @@ function WatchCart() {
 		result.innerHTML = "<p id='result'>Промежуточный итог: <b>" + summ + " руб. </b></p>";
 
 	var order = document.getElementById('order-button');
+	if(!(order === null)) {
 		order.className = 'delete-button not-hidden';
+	}
 
 
 	var delivery1 = document.getElementById('dm-1');
@@ -214,8 +216,12 @@ function DeleteFromCart( index ) {
 	for(var i = 0; i < 30; i++) {
 		deleteCookie('cart-element-'+i );
 	}
-	if(goods == 0) {
+	if(goods === 0) {
 		deleteCookie('vagoods');
+		var zeroer = document.getElementById('button-condition');
+		if(!(zeroer === null)) {
+			zeroer.href = '#zero-error';
+		}
 	}
 	else {
 		setCookie('vagoods', goods, 7);
@@ -232,6 +238,8 @@ function DeleteFromCart( index ) {
 		WatchCart();
 		return;
 	}
+
+
 	var deliverysum = document.getElementById('delivery-sum');
 	deliverysum.innerHTML = "<p id='delivery-sum'></p>"
 	
@@ -242,7 +250,7 @@ function checkButtonCondition() {
 	var tbox = document.getElementsByClassName('t-box');
 	for(var i = 0; i < tbox.length; i++) {
 		tbox[i].style.backgroundColor = '';
-		if( tbox[i].value === "" ) {
+		if( tbox[i].value === "" && !(document.getElementById('button-condition').href === '#zero-error')) {
 			document.getElementById("button-condition").href = '#fields-error';
 			tbox[i].style.backgroundColor = '#f2bcbc';
 			return;
@@ -251,12 +259,15 @@ function checkButtonCondition() {
 
 	var rb1 = document.getElementById('dm-1');
 	var rb2 = document.getElementById('dm-2');
-	if( !(rb1.checked) && !(rb2.checked) ) {
+	if( !(rb1.checked) && !(rb2.checked) && !(document.getElementById('button-condition').href === '#zero-error')) {
 		document.getElementById("button-condition").href = '#fields-error';
 		return;
 	}
 	
-	document.getElementById("button-condition").href = '#success-window';
+	if(!(document.getElementById('button-condition').href === '#zero-error')) {
+		document.getElementById("button-condition").href = '#success-window';
+	}
+	
 
 };
 

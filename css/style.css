@@ -171,7 +171,8 @@ hr {
 
 /*pop up*/
 #question, #success-window, #basket,
-#success-cart, #error1, #error2 {
+#success-cart, #error1, #error2,
+#zero-error, #fields-error {
 	padding: 20px;
 	background-color: #fff;
 	max-width: 600px;
